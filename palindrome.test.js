@@ -1,12 +1,12 @@
 const { isPalindrome } = require("./palindrome");
 
-describe("Palindrome Checker Tests", () => {
+describe("Palindrome Tests", () => {
 
-  test("simple palindrome", () => {
+  test("racecar is palindrome", () => {
     expect(isPalindrome("racecar")).toBe(true);
   });
 
-  test("not a palindrome", () => {
+  test("hello is not palindrome", () => {
     expect(isPalindrome("hello")).toBe(false);
   });
 
