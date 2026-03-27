@@ -1,5 +1,11 @@
-function reverseString(str) {
-  return str.split("").reverse().join("");
+function isPalindrome(str) {
+  const cleaned = str
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+
+  const reversed = cleaned.split("").reverse().join("");
+
+  return cleaned === reversed;
 }
 
-module.exports = { reverseString };
+module.exports = { isPalindrome };
