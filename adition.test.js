@@ -1,29 +1,36 @@
-//operations should return sum of two numbers
+// Test suite for addition function
 
-const {addition} = require("./addition")
+const { addition } = require("./addition");
 
-test("2+4=6", () => {
-    expect(addition(2,4)).toBe(6)
-})
+describe("Addition Function Tests", () => {
 
-test("2+10=12", () => {
-    expect(addition(2,10)).toBe(12)
-})
-test.skip("23 + 60 = 83", () => {
-    expect(addition(23, 60)).toBe(83)
-})
+  test("adds two positive numbers", () => {
+    expect(addition(2, 4)).toBe(6);
+  });
 
-test.each([[3, 4, 7], [5, -10, -5], [0, 2, 2]])(
-  'a + b = expected',
-  (a, b, expected) => {
+  test("adds positive and negative number", () => {
+    expect(addition(5, -3)).toBe(2);
+  });
+
+  test("adds two negative numbers", () => {
+    expect(addition(-4, -6)).toBe(-10);
+  });
+
+  test("adds zero correctly", () => {
+    expect(addition(0, 5)).toBe(5);
+  });
+
+  test("adds decimals", () => {
+    expect(addition(2.5, 1.5)).toBe(4);
+  });
+
+  test.each([
+    [1, 2, 3],
+    [10, 5, 15],
+    [-3, 3, 0],
+    [100, 200, 300]
+  ])("adds %i + %i = %i", (a, b, expected) => {
     expect(addition(a, b)).toBe(expected);
-  }
-);
+  });
 
-test.each([[3, 9, 7], [5, -10, 5], [0, 2, 10]])(
-  'a + b = expected',
-  (a, b, expected) => {
-    expect(addition(a, b)).toBe(expected);
-  }
-);
-//just it
+});
