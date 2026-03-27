@@ -16,3 +16,10 @@ test.each([[3, 4, 7], [5, -10, -5], [0, 2, 2]])(
     expect(addition(a, b)).toBe(expected);
   }
 );
+
+test.each([[3, 9, 7], [5, -10, 5], [0, 2, 10]])(
+  'a + b = expected',
+  (a, b, expected) => {
+    expect(addition(a, b)).toBe(expected);
+  }
+);
