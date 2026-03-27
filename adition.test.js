@@ -6,6 +6,9 @@ test("2+4=6", () => {
     expect(addition(2,4)).toBe(6)
 })
 
+test("2+10=12", () => {
+    expect(addition(2,10)).toBe(12)
+})
 test.skip("23 + 60 = 83", () => {
     expect(addition(23, 60)).toBe(83)
 })
@@ -23,3 +26,4 @@ test.each([[3, 9, 7], [5, -10, 5], [0, 2, 10]])(
     expect(addition(a, b)).toBe(expected);
   }
 );
+//just it
