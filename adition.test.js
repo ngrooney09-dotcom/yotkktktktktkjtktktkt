@@ -9,6 +9,9 @@ test("2+4=6", () => {
 test("2+10=12", () => {
     expect(addition(2,10)).toBe(12)
 })
+test("2+9=11", () => {
+    expect(addition(2,9)).toBe(11)
+})
 test.skip("23 + 60 = 83", () => {
     expect(addition(23, 60)).toBe(83)
 })
