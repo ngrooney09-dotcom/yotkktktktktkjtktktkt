@@ -1,33 +1,33 @@
-const { isPalindrome } = require("./palindrome");
+const { reverseString } = require("./reverse");
 
-describe("Palindrome Checker Tests", () => {
+describe("String Reverser Tests", () => {
 
-  test("simple palindrome", () => {
-    expect(isPalindrome("racecar")).toBe(true);
+  test("reverses a normal word", () => {
+    expect(reverseString("hello")).toBe("olleh");
   });
 
-  test("not a palindrome", () => {
-    expect(isPalindrome("hello")).toBe(false);
+  test("reverses a sentence", () => {
+    expect(reverseString("hello world")).toBe("dlrow olleh");
   });
 
-  test("case insensitive", () => {
-    expect(isPalindrome("RaceCar")).toBe(true);
-  });
-
-  test("ignores spaces", () => {
-    expect(isPalindrome("nurses run")).toBe(true);
-  });
-
-  test("ignores punctuation", () => {
-    expect(isPalindrome("A man, a plan, a canal: Panama")).toBe(true);
-  });
-
-  test("numbers palindrome", () => {
-    expect(isPalindrome("12321")).toBe(true);
+  test("reverses with numbers", () => {
+    expect(reverseString("12345")).toBe("54321");
   });
 
   test("empty string", () => {
-    expect(isPalindrome("")).toBe(true);
+    expect(reverseString("")).toBe("");
+  });
+
+  test("single character", () => {
+    expect(reverseString("a")).toBe("a");
+  });
+
+  test.each([
+    ["abc", "cba"],
+    ["racecar", "racecar"],
+    ["JavaScript", "tpircSavaJ"]
+  ])("reverse %s → %s", (input, expected) => {
+    expect(reverseString(input)).toBe(expected);
   });
 
 });
